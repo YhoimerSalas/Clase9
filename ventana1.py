@@ -358,8 +358,6 @@ class Ventana1(QMainWindow):
         # establecemos el layout vertical a la ventana
         self.ventanaDialogo.setLayout(self.vertical)
 
-        # variable para controlar que se han ingresado datos correctos
-        self.datosCorrectos = True
 
     # metodo botonLimpiar
     def accion_botonLimpiar(self):
@@ -379,6 +377,8 @@ class Ventana1(QMainWindow):
     # metodo botonRegistrar
     def accion_botonRegistrar(self):
 
+        # variable para controlar que se han ingresado datos correctos
+        self.datosCorrectos = True
 
         # validamos que los 2 password sean iguales
         if (self.password.text() != self.password2.text()):
@@ -447,6 +447,9 @@ class Ventana1(QMainWindow):
             self.file.close()
 
     def accion_botonBuscar(self):
+
+        # variable para controlar que se han ingresado datos correctos
+        self.datosCorrectos = True
 
         self.ventanaDialogo.setWindowTitle("Buscar preguntas de validacion")
 
