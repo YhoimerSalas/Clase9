@@ -318,7 +318,7 @@ class Ventana1(QMainWindow):
         self.ladoDerecho.addRow(self.botonBuscar, self.botonRecuperar)
 
         # hacemos el boton continuar para pasar a ventana2
-        self.botonContinuar = QPushButton("Continiar")
+        self.botonContinuar = QPushButton("Continuar")
 
         # establecemos el ancho del botom
         self.botonContinuar.setFixedWidth(90)
