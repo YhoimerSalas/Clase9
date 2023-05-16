@@ -8,6 +8,8 @@ from PyQt5 import QtGui
 from cliente import Cliente
 import math
 
+from ventana3 import Ventana3
+
 
 class Ventana2(QMainWindow):
 
@@ -210,6 +212,29 @@ class Ventana2(QMainWindow):
         # establecemos el metodo para que funcionen todos los botones
         self.botones.idClicked.connect(self.metodo_accionBotones)
 
+        # --------------------------- BOTON FORMA TABULAR ---------------------------
+
+        # Hacemos el boton para navegar a la ventana de la tabla de usuarios:
+        self.botonFormaTabular = QPushButton("Forma Tabular")
+
+        # establecemos el ancho del boton:
+        self.botonFormaTabular.setFixedWidth(100)
+
+        # le ponemos los estilos:
+        self.botonFormaTabular.setStyleSheet("background-color: #008b45;"
+                                             "color: #ffffff;"
+                                             "padding: 10px;"
+                                             "margin-top: 10px;"
+                                             )
+
+        # hacemos que el boton botonContinuar tenga su metodo:
+        self.botonFormaTabular.clicked.connect(self.metodo_botonFormaTabular)
+
+        # metemos el layout vertical el botonFormaTabular:
+        self.vertical.addWidget(self.botonFormaTabular)
+
+
+
         # ------------------------------------- BOTON VOLVER ------------------------
 
         # hacemos el boton para devolvernos a la ventana anterior:
@@ -245,6 +270,11 @@ class Ventana2(QMainWindow):
     def metodo_botonVolver(self):
         self.hide()
         self.ventanaAnterior.show()
+
+    def metodo_botonFormaTabular(self):
+        self.hide()
+        self.ventana3 = Ventana3(self)
+        self.ventana3.show()
 
 if __name__ == '__main__':
 
