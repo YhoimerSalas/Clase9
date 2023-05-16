@@ -273,7 +273,7 @@ class Ventana2(QMainWindow):
 
     def metodo_botonFormaTabular(self):
         self.hide()
-        self.ventana3 = Ventana3()
+        self.ventana3 = Ventana3(self)
         self.ventana3.show()
 
 if __name__ == '__main__':
