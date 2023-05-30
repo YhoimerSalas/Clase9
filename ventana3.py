@@ -3,7 +3,7 @@ import sys
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QPixmap, QFont, QIcon
 from PyQt5.QtWidgets import QMainWindow, QLabel, QDesktopWidget, QVBoxLayout, QScrollArea, QTableWidget, \
-    QTableWidgetItem, QPushButton, QApplication, QToolBar, QAction
+    QTableWidgetItem, QPushButton, QApplication, QToolBar, QAction, QMessageBox
 from PyQt5 import QtGui
 
 from cliente import Cliente
@@ -250,7 +250,17 @@ class Ventana3(QMainWindow):
         self.ventanaAnterior.show()
 
     def accion_delete(self):
-        pass
+        filaActual = self.tabla.currentRow()
+
+        if filaActual < 0:
+            return QMessageBox.warning(self,'Warning', 'Para borrar, se debe seleccionar un registro')
+
+        boton = QMessageBox.question(
+            self,
+            'Confirmation',
+            '¿Esta seguro de que quieres borrar este registro?',
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
     def accion_add(self):
         pass
     def accion_insert(self):
